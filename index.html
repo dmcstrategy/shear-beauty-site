@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shear Beauty Private Suites | Deer Park, TX</title>
+  <meta name="description" content="Private suite and chair rental for independent beauty professionals in Deer Park, TX. Weekly rent, professional amenities, tenant portal, and merch shop." />
+
+  <style>
+    :root {
+      --cream: #f7f1e8;
+      --warm-white: #fffaf3;
+      --brown: #4a3023;
+      --brown-soft: #6a4938;
+      --gold: #c7983c;
+      --gold-dark: #a77a27;
+      --text: #35251d;
+      --muted: #7d6b5f;
+      --line: #e3d6c4;
+      --card: #ffffff;
+      --shadow: 0 18px 40px rgba(60, 38, 25, .12);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 250, 243, .96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-wrap {
+      max-width: 1180px;
+      margin: auto;
+      padding: 16px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .logo {
+      color: var(--gold-dark);
+      font-size: 30px;
+      font-style: italic;
+      letter-spacing: .5px;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      display: block;
+      font-size: 9px;
+      letter-spacing: 4px;
+      color: var(--brown);
+      text-transform: uppercase;
+      font-style: normal;
+      text-align: center;
+      margin-top: -6px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 14px;
+    }
+
+    nav a:hover { color: var(--gold-dark); }
+
+    .nav-btn, .btn {
+      display: inline-block;
+      background: var(--gold);
+      color: white;
+      padding: 12px 18px;
+      border-radius: 4px;
+      font-weight: bold;
+      border: 1px solid var(--gold);
+      transition: .2s ease;
+    }
+
+    .btn:hover, .nav-btn:hover {
+      background: var(--gold-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn.secondary {
+      background: transparent;
+      border-color: rgba(255,255,255,.65);
+      color: white;
+    }
+
+    .btn.light {
+      background: white;
+      color: var(--brown);
+      border-color: white;
+    }
+
+    .hero {
+      background:
+        linear-gradient(90deg, rgba(74,48,35,.96), rgba(74,48,35,.72), rgba(74,48,35,.28)),
+        radial-gradient(circle at top right, rgba(199,152,60,.2), transparent 35%),
+        var(--brown);
+      color: white;
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 44px));
+      margin: auto;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    h1, h2, h3 { line-height: 1.08; margin: 0; }
+
+    h1 {
+      font-size: clamp(44px, 7vw, 82px);
+      margin: 14px 0 18px;
+    }
+
+    h1 em {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .hero p {
+      max-width: 570px;
+      font-size: 19px;
+      color: rgba(255,255,255,.88);
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .photo-card {
+      min-height: 390px;
+      border: 1px solid rgba(255,255,255,.2);
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.18), rgba(255,255,255,.04)),
+        rgba(255,255,255,.08);
+      box-shadow: var(--shadow);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: rgba(255,255,255,.65);
+      font-style: italic;
+      font-size: 30px;
+    }
+
+    section { padding: 78px 0; }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 34px;
+    }
+
+    .section-head.center {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    h2 {
+      font-size: clamp(34px, 4vw, 52px);
+      color: var(--brown);
+      margin: 8px 0 12px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .amenity-strip {
+      background: var(--warm-white);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 28px 0;
+    }
+
+    .amenities {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 10px;
+      text-align: center;
+    }
+
+    .amenity {
+      padding: 12px 8px;
+      border-right: 1px solid var(--line);
+      font-size: 13px;
+    }
+
+    .amenity:last-child { border-right: 0; }
+
+    .icon {
+      font-size: 28px;
+      display: block;
+      color: var(--gold-dark);
+      margin-bottom: 6px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      color: var(--brown);
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .card p, .card li { color: var(--muted); font-size: 15px; }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+    }
+
+    .list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .list li {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .list li::before {
+      content: "✓";
+      color: var(--gold-dark);
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .dark-band {
+      background:
+        radial-gradient(circle at center, rgba(199,152,60,.12), transparent 42%),
+        var(--brown);
+      color: white;
+      text-align: center;
+    }
+
+    .dark-band h2 { color: white; }
+
+    .price {
+      font-size: 62px;
+      color: var(--gold);
+      margin: 15px 0 0;
+    }
+
+    .price span {
+      display: block;
+      font-size: 14px;
+      color: rgba(255,255,255,.75);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .mini-banner {
+      margin-top: 26px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.16);
+      padding: 20px;
+      color: rgba(255,255,255,.86);
+    }
+
+    .two-col-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+    }
+
+    .no-list li::before {
+      content: "✕";
+      color: #a64735;
+    }
+
+    .community {
+      background: #eee5d8;
+    }
+
+    .tenant-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .tenant {
+      background: var(--warm-white);
+      border: 1px solid var(--line);
+      padding: 24px;
+      text-align: center;
+    }
+
+    .avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: #e5d6c5;
+      margin: 0 auto 12px;
+      display: grid;
+      place-items: center;
+      color: var(--gold-dark);
+      font-size: 26px;
+    }
+
+    .contact-section {
+      background: var(--brown);
+      color: white;
+    }
+
+    .contact-section h2 { color: white; }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 28px;
+    }
+
+    form {
+      display: grid;
+      gap: 12px;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.08);
+      color: white;
+      border-radius: 4px;
+      font: inherit;
+    }
+
+    input::placeholder, textarea::placeholder { color: rgba(255,255,255,.65); }
+
+    .portal {
+      background: var(--warm-white);
+    }
+
+    .portal-actions {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .portal-card {
+      background: white;
+      border: 1px solid var(--line);
+      padding: 26px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .portal-card a {
+      display: block;
+      font-weight: bold;
+      color: var(--brown);
+    }
+
+    .portal-card small {
+      display: block;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    .management-note {
+      margin-top: 26px;
+      background: #f0e5d4;
+      border: 1px solid var(--line);
+      padding: 28px;
+      font-style: italic;
+    }
+
+    .shop {
+      background: #f4eadc;
+    }
+
+    .shop-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .product {
+      background: white;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      padding: 24px;
+    }
+
+    .product-img {
+      height: 180px;
+      background: #eadfce;
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .faq {
+      background: var(--warm-white);
+    }
+
+    details {
+      background: white;
+      border: 1px solid var(--line);
+      padding: 18px 22px;
+      margin-bottom: 12px;
+      box-shadow: 0 8px 20px rgba(60,38,25,.06);
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: bold;
+      color: var(--brown);
+    }
+
+    footer {
+      background: #332118;
+      color: rgba(255,255,255,.78);
+      padding: 58px 0 26px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 30px;
+      margin-bottom: 36px;
+    }
+
+    footer a { display: block; margin: 8px 0; }
+
+    .small { font-size: 13px; color: rgba(255,255,255,.58); }
+
+    @media (max-width: 900px) {
+      nav { display: none; }
+      .hero-grid,
+      .split,
+      .two-col-cards,
+      .contact-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .amenities,
+      .cards,
+      .portal-actions,
+      .tenant-grid,
+      .shop-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero { min-height: auto; padding: 80px 0; }
+      .photo-card { min-height: 260px; }
+    }
+
+    @media (max-width: 560px) {
+      .amenities,
+      .cards,
+      .portal-actions,
+      .tenant-grid,
+      .shop-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-wrap { padding: 14px 16px; }
+      .logo { font-size: 25px; }
+      section { padding: 58px 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <a href="#home" class="logo">Shear Beauty <span>Private Suites</span></a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#suite">Suite Rental</a>
+      <a href="#community">Our Community</a>
+      <a href="#contact">Tour / Contact</a>
+      <a href="#news">News & Events</a>
+      <a href="#portal">Tenant Portal</a>
+      <a href="#shop">Merch</a>
+      <a class="nav-btn" href="#">Book a Tour</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">Deer Park, TX</div>
+      <h1>Private. Clean. <em>Professional.</em></h1>
+      <p>A premium private suite experience designed for independent beauty professionals who want more: more freedom, more support, and a space that feels like home.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#">Book a Tour</a>
+        <a class="btn secondary" href="#suite">Check Availability</a>
+      </div>
+    </div>
+
+    <div class="photo-card">
+      Suite Photo<br />Placeholder
+    </div>
+  </div>
+</section>
+
+<div class="amenity-strip">
+  <div class="container amenities">
+    <div class="amenity"><span class="icon">🕒</span>24/7 Access</div>
+    <div class="amenity"><span class="icon">⌁</span>High-Speed WiFi</div>
+    <div class="amenity"><span class="icon">🛁</span>Shampoo Bowls</div>
+    <div class="amenity"><span class="icon">🧺</span>On-Site Laundry</div>
+    <div class="amenity"><span class="icon">☕</span>Coffee Bar</div>
+    <div class="amenity"><span class="icon">🚗</span>Parking</div>
+    <div class="amenity"><span class="icon">🔒</span>Secure Building</div>
+    <div class="amenity"><span class="icon">❄</span>Climate Controlled</div>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow">Why Shear Beauty</div>
+      <h2>Built for Beauty Professionals</h2>
+      <p>We take care of the foundation so you can focus on building your business, serving your clients, and owning your craft.</p>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Your Own Private Suite</h3>
+        <p>A dedicated, clean space that feels like yours — your hours, your clients, your vision.</p>
+      </div>
+      <div class="card">
+        <h3>Clean & Modern</h3>
+        <p>Bright, professional spaces with refined finishes and a welcoming atmosphere.</p>
+      </div>
+      <div class="card">
+        <h3>Supportive Community</h3>
+        <p>Surround yourself with like-minded beauty professionals building strong businesses.</p>
+      </div>
+      <div class="card">
+        <h3>Total Freedom</h3>
+        <p>Be your own boss. Grow your business your way, without the overhead of a traditional salon.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="suite">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Suite Rental Details</div>
+      <h2>Everything You Need. Nothing You Don’t.</h2>
+      <p>Simple. Transparent. No fluff. Your suite gives you the essentials — the building gives you the support.</p>
+    </div>
+
+    <div class="split">
+      <div class="card">
+        <h3>Your Suite</h3>
+        <p>What comes with your private space:</p>
+        <ul class="list">
+          <li>Professional styling chair</li>
+          <li>Floor mat</li>
+          <li>Wall-mounted mirror</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Building Amenities</h3>
+        <p>Shared features included with your rental:</p>
+        <ul class="list">
+          <li>24/7 building access</li>
+          <li>High-speed WiFi</li>
+          <li>Shampoo bowl access</li>
+          <li>Laundry facilities</li>
+          <li>Clean common areas</li>
+          <li>Coffee bar & refreshment station</li>
+          <li>Client waiting area</li>
+          <li>On-site parking</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-band">
+  <div class="container">
+    <div class="eyebrow">Weekly Rental</div>
+    <h2>Move-In Ready</h2>
+    <div class="price">$210 <span>per week</span></div>
+    <p>No hidden fees. Easy online payments. Professional space without the unnecessary drama goblins.</p>
+    <a class="btn" href="#">Check Availability</a>
+
+    <div class="mini-banner">
+      <strong>Suite Financing Available</strong><br />
+      Flexible options may be available to help you get started. Ask management for details.
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Is this right for you?</div>
+      <h2>Who We’re Looking For</h2>
+      <p>Shear Beauty is a curated community. We’re selective because our professionals — and their clients — deserve a calm, respectful environment.</p>
+    </div>
+
+    <div class="two-col-cards">
+      <div class="card">
+        <h3>Perfect For</h3>
+        <ul class="list">
+          <li>Licensed beauty professionals ready to build their brand</li>
+          <li>Hair professionals, estheticians, lash & brow artists, nail techs, and related professionals</li>
+          <li>Professionals who value a clean, respectful environment</li>
+          <li>Independent operators who want autonomy with support</li>
+          <li>Entrepreneurs serious about growing their clientele</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Not a Fit For</h3>
+        <ul class="list no-list">
+          <li>Anyone looking for drama or negativity</li>
+          <li>Those who aren’t licensed where required</li>
+          <li>Anyone expecting walk-in foot traffic</li>
+          <li>Anyone not serious about their business</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="community" id="community">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow">Tenant Programs</div>
+      <h2>We Invest in Our Community</h2>
+      <p>More than just a space — we help professionals feel supported, seen, and connected.</p>
+    </div>
+
+    <div class="two-col-cards">
+      <div class="card">
+        <h3>Referral Rewards</h3>
+        <p>Earn 4 weeks of abated rent per successful referral after the referred professional meets program requirements.</p>
+        <p><strong>Stackable up to 14 weeks per year.</strong></p>
+      </div>
+
+      <div class="card">
+        <h3>The Bloom Program</h3>
+        <p><strong>Because life happens.</strong></p>
+        <p>Temporary rent assistance may be available in limited hardship situations. Terms and conditions apply.</p>
+      </div>
+    </div>
+
+    <div class="section-head" style="margin-top:60px;">
+      <div class="eyebrow">Our Community</div>
+      <h2>Meet Our Professionals</h2>
+      <p>A talented community of independent beauty professionals. Tenant profiles coming soon.</p>
+    </div>
+
+    <div class="tenant-grid">
+      <div class="tenant"><div class="avatar">✂</div><strong>Professional Profile</strong><br /><small>Coming Soon</small></div>
+      <div class="tenant"><div class="avatar">✦</div><strong>Professional Profile</strong><br /><small>Coming Soon</small></div>
+      <div class="tenant"><div class="avatar">❁</div><strong>Professional Profile</strong><br /><small>Coming Soon</small></div>
+      <div class="tenant"><div class="avatar">★</div><strong>Professional Profile</strong><br /><small>Coming Soon</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section" id="contact">
+  <div class="container contact-grid">
+    <div>
+      <div class="eyebrow">Get Started</div>
+      <h2>See the Space. Feel the Vibe.</h2>
+      <p>Let’s make sure Shear Beauty is the right fit for you. Book a tour, ask questions, or apply when you’re ready.</p>
+      <a class="btn" href="#">Schedule Tour</a>
+    </div>
+
+    <div class="card" style="background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.16);">
+      <h3 style="color:white;">Send Us a Message</h3>
+      <form>
+        <input type="text" placeholder="Your Name" />
+        <input type="email" placeholder="Email Address" />
+        <input type="tel" placeholder="Phone" />
+        <select>
+          <option>What can we help with?</option>
+          <option>Book a Tour</option>
+          <option>Apply for a Suite</option>
+          <option>Ask About Financing</option>
+          <option>General Question</option>
+        </select>
+        <textarea rows="5" placeholder="Tell us what you're looking for..."></textarea>
+        <button class="btn" type="button">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="news">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">What’s Happening</div>
+      <h2>News & Events</h2>
+      <p>Stay connected with Shear Beauty updates, open houses, promotions, and professional spotlights.</p>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Open House</h3>
+        <p>Come tour the suites, meet the community, and see what makes Shear Beauty different.</p>
+      </div>
+      <div class="card">
+        <h3>Professional Spotlight</h3>
+        <p>We’ll highlight tenant wins, services, and stories as our community grows.</p>
+      </div>
+      <div class="card">
+        <h3>Referral Promo</h3>
+        <p>Referral rewards available for successful tenant referrals. Terms apply.</p>
+      </div>
+      <div class="card">
+        <h3>Merch Drops</h3>
+        <p>Seasonal Shear Beauty merch and local product features coming soon.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="portal" id="portal">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow">Current Tenants</div>
+      <h2>Tenant Portal</h2>
+      <p>Your one-stop place to pay rent, access documents, review studio guidelines, submit requests, and stay connected with management.</p>
+    </div>
+
+    <div class="portal-actions">
+      <div class="portal-card">
+        <div class="icon">💳</div>
+        <a href="#">Pay Rent</a>
+        <small>Secure weekly rent payments. Powered by HoneyBook.</small>
+      </div>
+
+      <div class="portal-card">
+        <div class="icon">📄</div>
+        <a href="#">My Agreements</a>
+        <small>Access lease documents and signed agreements.</small>
+      </div>
+
+      <div class="portal-card">
+        <div class="icon">🛠</div>
+        <a href="#">Submit a Request</a>
+        <small>Maintenance, supplies, access, or general support.</small>
+      </div>
+
+      <div class="portal-card">
+        <div class="icon">☎</div>
+        <a href="#">Contact Management</a>
+        <small>Need help? Reach the Shear Beauty team.</small>
+      </div>
+    </div>
+
+    <div class="portal-actions" style="margin-top:18px;">
+      <div class="portal-card">
+        <div class="icon">📌</div>
+        <a href="#">Studio Guidelines</a>
+        <small>House rules, expectations, and shared-space standards.</small>
+      </div>
+
+      <div class="portal-card">
+        <div class="icon">📚</div>
+        <a href="#">Business Resources</a>
+        <small>Helpful links, templates, and growth tools.</small>
+      </div>
+
+      <div class="portal-card">
+        <div class="icon">👥</div>
+        <a href="#">Community Directory</a>
+        <small>Connect with other beauty professionals.</small>
+      </div>
+
+      <div class="portal-card">
+        <div class="icon">📣</div>
+        <a href="#">Announcements</a>
+        <small>Stay current on updates and upcoming events.</small>
+      </div>
+    </div>
+
+    <div class="management-note">
+      “We’re here to support your growth and success. If you need anything, don’t hesitate to reach out.”
+      <br /><br />— The Shear Beauty Team
+    </div>
+  </div>
+</section>
+
+<section class="shop" id="shop">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow">Shop Shear Beauty</div>
+      <h2>Merch Shop</h2>
+      <p>Official Shear Beauty merchandise and select in-building products. Online checkout powered by Square.</p>
+    </div>
+
+    <div class="shop-grid">
+      <div class="product">
+        <div class="product-img">Product Photo</div>
+        <h3>Shear Beauty Tee</h3>
+        <p>Soft branded tee for tenants, clients, and fans of the suite life.</p>
+        <a class="btn" href="#">Buy with Square</a>
+      </div>
+
+      <div class="product">
+        <div class="product-img">Product Photo</div>
+        <h3>Logo Tumbler</h3>
+        <p>Pretty, practical, and perfect for coffee bar energy on the go.</p>
+        <a class="btn" href="#">Buy with Square</a>
+      </div>
+
+      <div class="product">
+        <div class="product-img">Product Photo</div>
+        <h3>Gift / Promo Item</h3>
+        <p>Seasonal merch, promo bundles, or featured products can live here.</p>
+        <a class="btn" href="#">Buy with Square</a>
+      </div>
+    </div>
+
+    <div class="management-note" style="background:white;">
+      <strong>Commission Recommendation:</strong> Online website merch sales are Shear Beauty direct sales. Beauty Professional referral credits may apply only to qualifying in-person assisted sales, subject to management approval and tracking.
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Questions</div>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+
+    <details open>
+      <summary>Is Shear Beauty a salon?</summary>
+      <p>No. Shear Beauty is a private suite/chair rental business for independent beauty professionals.</p>
+    </details>
+
+    <details>
+      <summary>Do you provide clients or walk-in traffic?</summary>
+      <p>No. Beauty professionals are responsible for building and managing their own clientele.</p>
+    </details>
+
+    <details>
+      <summary>What is included with the suite?</summary>
+      <p>Your suite includes a professional chair, floor mat, and wall-mounted mirror. The building includes shared amenities like WiFi, laundry, shampoo bowls, coffee bar, parking, and 24/7 access.</p>
+    </details>
+
+    <details>
+      <summary>How much is rent?</summary>
+      <p>Weekly rent is $210. Payments can be handled online through the tenant portal once setup is complete.</p>
+    </details>
+
+    <details>
+      <summary>Is financing available?</summary>
+      <p>Suite financing may be available. Ask management for details. Terms and conditions apply.</p>
+    </details>
+
+    <details>
+      <summary>Can tenants sell products or merch?</summary>
+      <p>Product and merch sales may be available through Square. Online Shear Beauty merch sales belong to Shear Beauty. In-person assisted sales may qualify for a tracked referral credit if approved by management.</p>
+    </details>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <div class="logo" style="color:var(--gold);">Shear Beauty <span style="color:white;">Private Suites</span></div>
+      <p>Private suites for independent beauty professionals in Deer Park, TX. Your business. Your way. Your space.</p>
+    </div>
+
+    <div>
+      <strong>Explore</strong>
+      <a href="#home">Home</a>
+      <a href="#suite">Suite Rental</a>
+      <a href="#community">Our Community</a>
+      <a href="#contact">Tour / Contact</a>
+      <a href="#news">News & Events</a>
+    </div>
+
+    <div>
+      <strong>For Tenants</strong>
+      <a href="#portal">Tenant Portal</a>
+      <a href="#shop">Merch Shop</a>
+      <a href="#">Pay Rent</a>
+      <a href="#">Lease Documents</a>
+      <a href="#">Submit a Request</a>
+    </div>
+
+    <div>
+      <strong>Contact</strong>
+      <p>Deer Park, TX</p>
+      <p>hello@shearbeautydp.com</p>
+      <p>By Appointment Only</p>
+    </div>
+  </div>
+
+  <div class="container small">
+    © 2026 Shear Beauty Private Suites. All rights reserved.
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
